@@ -1,32 +1,40 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FootballScores
 {
     public partial class AddTeamForm : Form
     {
-        private FootballManagement ft;
-        private List<FootballManagement> footballManagements;
+        private readonly FootballManagement _footballManagement;
+
         public AddTeamForm()
         {
             InitializeComponent();
+            _footballManagement = new FootballManagement();
         }
-        
+
         private void button1_Click(object sender, EventArgs e)
         {
-            FootballManagement football = ft.GetName(textBox1.Text);
-            if(textBox1.Text!="")
+            if (textBox1.Text != "")
             {
-                footballManagements.Add(football);
+                var result = _footballManagement.AddTeam(textBox1.Text);
+                if (result)
+                {
+                    MessageBox.Show("Team " + textBox1.Text + " added", "New team added", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Team " + textBox1.Text + " already exists", "Error while adding team",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
             }
-            MessageBox.Show("Fill out team name");
+            else
+            {
+                MessageBox.Show("Fill out team name");
+            }
         }
     }
 }

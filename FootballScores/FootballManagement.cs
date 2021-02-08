@@ -1,37 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace FootballScores
 {
-    class FootballManagement
+    internal class FootballManagement
     {
-        private string TeamName;
-        private List<FootballTeam> footballTeams;
+        private static readonly List<string> FootballTeams = new List<string>();
 
 
-        public string Name { get { return TeamName; } }
-
-        public FootballManagement (string teamName)
+        public List<string> GetTeams()
         {
-            this.TeamName = teamName;
+            return FootballTeams;
         }
 
-        public FootballManagement GetName(string teamName)
+        public bool AddTeam(string teamName)
         {
-            List<FootballTeam> filteredFootballTeams = new List<FootballTeam>();
-            foreach (var footballTeam in footballTeams)
+            if (!FootballTeams.Contains(teamName))
             {
-                filteredFootballTeams.Add(footballTeam);
-                
+                FootballTeams.Add(teamName);
+                return true;
             }
 
-            return null;
-        
-            
+            return false;
         }
-
     }
 }
