@@ -13,12 +13,12 @@ namespace FootballScores
     public partial class Form1 : Form
     {
         private readonly FootballManagement footballManagement;
-        private readonly FootballTeam ft;
+        private readonly FootballMatch ft;
 
         public Form1()
         {
             InitializeComponent();
-            ft = new FootballTeam();
+            ft = new FootballMatch();
             footballManagement = new FootballManagement();
         }
 
@@ -28,18 +28,20 @@ namespace FootballScores
             var a = Convert.ToInt32(tbHomeScore.Text);
             var b = Convert.ToInt32(textBox1.Text);
             ft.AddMatch(comboBox1.Text, comboBox2.Text, a, b);
-            foreach (var match in ft.GetMatches()) listBox1.Items.Add(match);
+            foreach (var match in ft.GetMatches()) listBox1.Items.Add(match.GetInfo());
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
-            if (textBox4.Text != "")
+            if (comboBox3.Text != "")
                 foreach (var match in ft.GetMatchesByTeam(comboBox3.Text))
-                    listBox1.Items.Add(match);
+                { 
+                    listBox1.Items.Add(match.GetInfo());
+                }
             else
                 foreach (var match in ft.GetMatches())
-                    listBox1.Items.Add(match);
+                    listBox1.Items.Add(match.GetInfo());
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -69,6 +71,16 @@ namespace FootballScores
             foreach (var team in teams)
             {
                 comboBox2.Items.Add(team);
+            }
+        }
+
+        private void comboBox3_Click(object sender, EventArgs e)
+        {
+            comboBox3.Items.Clear();
+            var teams = footballManagement.GetTeams();
+            foreach (var team in teams)
+            {
+                comboBox3.Items.Add(team);
             }
         }
     }
