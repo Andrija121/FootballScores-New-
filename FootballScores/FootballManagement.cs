@@ -22,5 +22,15 @@ namespace FootballScores
 
             return false;
         }
+        public bool DeleteTeam()
+        {
+            List<FootballManagement> footballManagements = new List<FootballManagement>();
+            if(FootballTeams.Contains(footballManagements.ToString()))
+            {
+                FootballTeams.Remove(footballManagements.ToString());
+                return true;
+            }
+            return false;
+        }
     }
 }

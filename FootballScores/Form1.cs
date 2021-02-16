@@ -81,7 +81,18 @@ namespace FootballScores
             foreach (var team in teams)
             {
                 comboBox3.Items.Add(team);
+                
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+           for (int i = listBox1.SelectedItems.Count -1; i >= 0; i--)
+            {
+                listBox1.Items.Remove(listBox1.SelectedItems[i]);
+            }
+          
         }
     }
 }
