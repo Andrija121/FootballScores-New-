@@ -44,6 +44,17 @@ namespace FootballScores
             }
             return footballMathcesByTeamName;
         }
+
+        public void DeleteMatch(int index)
+        {
+            footballMatches.RemoveAt(index);
+            
+        }
+        public void ChangeScore(int index,int homeScore,int awayScore)
+        {
+           
+            footballMatches[index].Score = homeScore.ToString() + " : " + awayScore.ToString();
+        }
         
 
     }

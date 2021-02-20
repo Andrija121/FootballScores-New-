@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnFilter = new System.Windows.Forms.Button();
-            this.tbHomeScore = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAddMatchResult = new System.Windows.Forms.Button();
@@ -44,11 +42,17 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -60,13 +64,6 @@
             this.label5.Size = new System.Drawing.Size(164, 37);
             this.label5.TabIndex = 28;
             this.label5.Text = "Matches :";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(30, 315);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 27;
             // 
             // label1
             // 
@@ -95,13 +92,6 @@
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = true;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
-            // 
-            // tbHomeScore
-            // 
-            this.tbHomeScore.Location = new System.Drawing.Point(30, 238);
-            this.tbHomeScore.Name = "tbHomeScore";
-            this.tbHomeScore.Size = new System.Drawing.Size(100, 26);
-            this.tbHomeScore.TabIndex = 22;
             // 
             // label3
             // 
@@ -196,13 +186,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(592, 450);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 26);
-            this.textBox2.TabIndex = 34;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -212,13 +195,6 @@
             this.label6.TabIndex = 35;
             this.label6.Text = "Change Score";
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(717, 450);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 26);
-            this.textBox3.TabIndex = 36;
-            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(613, 482);
@@ -227,6 +203,7 @@
             this.button3.TabIndex = 37;
             this.button3.Text = "Change Score";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label7
             // 
@@ -238,27 +215,55 @@
             this.label7.TabIndex = 38;
             this.label7.Text = ":";
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(27, 238);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 26);
+            this.numericUpDown1.TabIndex = 39;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(27, 331);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(120, 26);
+            this.numericUpDown2.TabIndex = 40;
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Location = new System.Drawing.Point(592, 448);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(99, 26);
+            this.numericUpDown3.TabIndex = 41;
+            // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.Location = new System.Drawing.Point(722, 448);
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(96, 26);
+            this.numericUpDown4.TabIndex = 42;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(946, 520);
+            this.Controls.Add(this.numericUpDown4);
+            this.Controls.Add(this.numericUpDown3);
+            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnFilter);
-            this.Controls.Add(this.tbHomeScore);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAddMatchResult);
@@ -267,6 +272,10 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,11 +284,9 @@
         #endregion
 
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnFilter;
-        private System.Windows.Forms.TextBox tbHomeScore;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAddMatchResult;
@@ -290,11 +297,13 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown numericUpDown4;
     }
 }
 

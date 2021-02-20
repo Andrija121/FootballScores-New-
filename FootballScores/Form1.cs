@@ -25,8 +25,8 @@ namespace FootballScores
         private void btnAddMatchResult_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
-            var a = Convert.ToInt32(tbHomeScore.Text);
-            var b = Convert.ToInt32(textBox1.Text);
+            var a = Convert.ToInt32(numericUpDown1.Value);           
+            var b = Convert.ToInt32(numericUpDown2.Value);
             ft.AddMatch(comboBox1.Text, comboBox2.Text, a, b);
             foreach (var match in ft.GetMatches()) listBox1.Items.Add(match.GetInfo());
         }
@@ -87,12 +87,24 @@ namespace FootballScores
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
-           for (int i = listBox1.SelectedItems.Count -1; i >= 0; i--)
-            {
-                listBox1.Items.Remove(listBox1.SelectedItems[i]);
+            if(listBox1.SelectedIndex != -1)
+            { 
+            ft.DeleteMatch(listBox1.SelectedIndex);
+            listBox1.Items.Clear();
+            foreach (var match in ft.GetMatches())
+                listBox1.Items.Add(match.GetInfo());
             }
-          
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex != -1)
+            {
+                ft.ChangeScore(listBox1.SelectedIndex, Convert.ToInt32(numericUpDown3.Value), Convert.ToInt32(numericUpDown4.Value));
+                listBox1.Items.Clear();
+                foreach (var match in ft.GetMatches())
+                    listBox1.Items.Add(match.GetInfo());
+            }
         }
     }
 }
